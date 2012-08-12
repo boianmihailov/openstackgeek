@@ -2,18 +2,18 @@
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
-   echo "You need to be 'root' dude." 1>&2
+   echo "You need to be 'root', use sudo to run the script." 1>&2
    exit 1
 fi
 
 # bridge stuff
-apt-get install bridge-utils
+apt-get install -y bridge-utils
 
 # rabbit food
-apt-get install rabbitmq-server memcached python-memcache
+apt-get install -y rabbitmq-server memcached python-memcache
 
 # kvm
-apt-get install kvm libvirt-bin
+apt-get install -y kvm libvirt-bin
 
 echo "#################################################################################################
 You'll need a LVM for 'nova-volumes'.  This assumes you have an empty disk spinning at /dev/sdb:
