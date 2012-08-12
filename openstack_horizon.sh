@@ -2,12 +2,12 @@
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
-   echo "You need to be 'root' dude." 1>&2
+   echo "You need to be 'root', use sudo to run the script." 1>&2
    exit 1
 fi
 
 # get horizon
-apt-get install libapache2-mod-wsgi openstack-dashboard
+apt-get install -y libapache2-mod-wsgi openstack-dashboard
 
 # restart apache
 service apache2 restart

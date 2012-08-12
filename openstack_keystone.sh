@@ -2,12 +2,12 @@
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
-   echo "You need to be 'root' dude." 1>&2
+   echo "You need to be 'root', use sudo to run the script." 1>&2
    exit 1
 fi
 
 # get keystone
-apt-get install keystone python-keystone python-keystoneclient
+apt-get install -y keystone python-keystone python-keystoneclient
 
 read -p "Enter a token for the OpenStack services to auth with keystone: " token
 read -p "Enter the password you used for the MySQL users (nova, glance, keystone): " password

@@ -2,7 +2,7 @@
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
-   echo "You need to be 'root' dude." 1>&2
+   echo "You need to be 'root', use sudo to run the script." 1>&2
    exit 1
 fi
 
@@ -21,7 +21,7 @@ read -p "Enter the floating network (eg. 10.0.1.224/27): " floating_range
 read -p "Enter the floating netowrk size (eg. 32): " floating_size
 
 # get nova
-apt-get install nova-api nova-cert nova-common nova-compute nova-compute-kvm nova-doc nova-network nova-objectstore nova-scheduler nova-vncproxy nova-volume python-nova python-novaclient
+apt-get install -y nova-api nova-cert nova-common nova-compute nova-compute-kvm nova-doc nova-network nova-objectstore nova-scheduler nova-vncproxy nova-volume python-nova python-novaclient
 
 . ./stackrc
 password=$SERVICE_PASSWORD

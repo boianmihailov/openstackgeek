@@ -2,7 +2,7 @@
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
-   echo "You need to be 'root' dude." 1>&2
+   echo "You need to be 'root', use sudo to run the script." 1>&2
    exit 1
 fi
 
