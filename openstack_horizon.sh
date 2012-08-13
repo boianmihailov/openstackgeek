@@ -11,6 +11,8 @@ apt-get install -y libapache2-mod-wsgi openstack-dashboard
 
 # restart apache
 service apache2 restart
+update-rc.d apache2 defaults
+
 
 . ./stackrc
 password=$SERVICE_PASSWORD

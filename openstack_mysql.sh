@@ -21,6 +21,8 @@ sudo sed -i '/^bind-address/s/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf
 
 # restart
 service mysql restart
+update-rc.d mysql defaults
+
 
 # wait for restart
 sleep 4 

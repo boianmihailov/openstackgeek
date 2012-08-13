@@ -63,6 +63,8 @@ sleep 4
 service glance-api restart
 service glance-registry restart
 sleep 4
+update-rc.d glance-api defaults
+update-rc.d glance-registry defaults
 
 # add ubuntu image
 if [ -f images/ubuntu-12.04-server-cloudimg-amd64-disk1.img ]

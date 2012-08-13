@@ -9,6 +9,7 @@ fi
 # install time server
 apt-get install -y ntp
 service ntp restart
+update-rc.d ntp defaults
 
 # modify timeserver configuration
 sed -e "
@@ -20,6 +21,7 @@ sed -e "
 # install tgt
 apt-get install -y tgt
 service tgt start
+update-rc.d tgt defaults
 
 # openiscsi-client
 apt-get install -y open-iscsi open-iscsi-utils

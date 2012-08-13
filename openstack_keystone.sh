@@ -41,6 +41,7 @@ sed -e "
 # create db tables and restart
 keystone-manage db_sync
 service keystone restart
+update-rc.d keystone defaults
 
 
 # sleep a bit before we whack on it

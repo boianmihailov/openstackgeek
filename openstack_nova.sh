@@ -85,6 +85,9 @@ echo "
 nova-manage db sync
 
 # restart nova
+update-rc.d keystone defaults
+for a in libvirt-bin nova-network nova-compute nova-api nova-objectstore nova-scheduler nova-volume nova-vncproxy; do update-rc.d "$a" defaults; done
+
 ./openstack_restart_nova.sh
 
 # no clue why we have to do this when it's in the config?
