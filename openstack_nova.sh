@@ -15,7 +15,7 @@ read -p "Enter the fixed network (eg. 10.0.2.32/27): " fixed_range
 read -p "Enter the fixed starting IP (eg. 10.0.2.33): " fixed_start
 echo "#######################################################################################"
 echo "The floating range can be a subset of your current network.  Configure your DHCP server"
-echo "to block out the range before you choose it here.  An example would be 10.0.1.224-255"
+echo "to block out the range before you choose it here.  An example would be 10.0.1.224/27"
 echo "#######################################################################################"
 read -p "Enter the floating network (eg. 10.0.1.224/27): " floating_range
 read -p "Enter the floating netowrk size (eg. 32): " floating_size
